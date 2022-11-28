@@ -3,17 +3,47 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/drawable-v24/btn_select_lang_night.xml" value="0.182" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/drawable-v24/ic_baseline_arrow_back_ios_24_night.xml" value="0.182" />
         <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/drawable-v24/ic_clear.xml" value="0.2505" />
         <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/drawable-v24/ic_search.xml" value="0.2505" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/drawable/bottomsheet_bg.xml" value="0.1955" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.149" />
         <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.2505" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/drawable/ic_baseline_dark_mode_24.xml" value="0.182" />
         <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/drawable/ic_baseline_keyboard_voice_24.xml" value="0.2505" />
         <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.2505" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.1475" />
         <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/drawable/search__bg.xml" value="0.19199999334161955" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/drawable/side_nav_bar.xml" value="0.182" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout-night/activity_about.xml" value="0.2866666666666667" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout-night/activity_book_mark.xml" value="0.2866666666666667" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout-night/activity_english_uzbek.xml" value="0.2866666666666667" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout-night/activity_main.xml" value="0.2911458333333333" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout-night/activity_main_nav.xml" value="0.2866666666666667" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout-night/activity_uzbek_english.xml" value="0.2879999900124293" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout-night/bottom_sheet.xml" value="0.2866666666666667" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout-night/header_layout.xml" value="0.2911458333333333" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout-night/item_rv.xml" value="0.2911458333333333" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout-night/nav_header_main.xml" value="0.2911458333333333" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout/activity_about.xml" value="0.2879999900124293" />
         <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout/activity_book_mark.xml" value="0.2911458333333333" />
         <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout/activity_english_uzbek.xml" value="0.2879999900124293" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout/activity_main-night.xml" value="0.2911458333333333" />
         <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout/activity_main.xml" value="0.2879999900124293" />
-        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout/bottom_sheet.xml" value="0.2911458333333333" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout/activity_main2.xml" value="0.2911458333333333" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout/activity_main_nav.xml" value="0.2911458333333333" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout/activity_uzbek_english.xml" value="0.2879999900124293" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout/app_bar_main.xml" value="0.2911458333333333" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout/bottom_sheet.xml" value="0.2879999900124293" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout/content_main.xml" value="0.2866666666666667" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout/fragment_gallery.xml" value="0.2911458333333333" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout/fragment_slideshow.xml" value="0.2911458333333333" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout/header_layout.xml" value="0.2911458333333333" />
         <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout/item_rv.xml" value="0.2879999900124293" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/layout/nav_header_main.xml" value="0.2911458333333333" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/menu/activity_main_drawer.xml" value="0.2866666666666667" />
+        <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/menu/main_activity2.xml" value="0.2911458333333333" />
         <entry key="..\:/AndroidStudioProjects/DictioronaryApp/app/src/main/res/menu/pop_menu.xml" value="0.2879999900124293" />
       </map>
     </option>

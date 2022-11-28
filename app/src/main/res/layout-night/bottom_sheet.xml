@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#2E2D2D"
     android:paddingBottom="40dp">
-
     <View
+        android:background="@color/white"
         android:layout_width="wrap_content"
-        android:layout_height="2dp"
-        android:layout_marginTop="4dp"
-        android:background="@color/black"
-        app:layout_constraintBottom_toTopOf="parent"
+        android:layout_height="1dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
@@ -23,9 +23,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout2"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -49,6 +47,7 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_volume"
                 android:layout_width="40dp"
+                android:tint="#03A9F4"
                 android:layout_height="40dp"
                 android:layout_marginStart="@dimen/margin_standard"
                 android:layout_marginEnd="16dp"
@@ -59,7 +58,6 @@
                 android:src="@drawable/volume"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:tint="#03A9F4"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/iv_bookmark"
                 app:layout_constraintTop_toTopOf="parent"
@@ -73,12 +71,12 @@
                 android:layout_marginEnd="8dp"
                 android:clickable="true"
                 android:focusable="true"
+                android:tint="@color/color"
                 android:foreground="?attr/selectableItemBackground"
                 android:padding="4dp"
                 android:src="@drawable/ic_bookmark_border"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:tint="@color/color"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/iv_share"
                 app:layout_constraintTop_toTopOf="parent"
@@ -91,13 +89,13 @@
                 android:layout_marginStart="@dimen/margin_standard"
                 android:layout_marginEnd="16dp"
                 android:clickable="true"
+                android:tint="#03A9F4"
                 android:focusable="true"
                 android:foreground="?attr/selectableItemBackground"
                 android:padding="8dp"
                 android:src="@drawable/ic_baseline_share_24"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:tint="#03A9F4"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -114,7 +112,7 @@
         android:layout_marginHorizontal="24dp"
         android:gravity="center_horizontal"
         android:text="oliyjonob, saxiy"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="32dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/eng_word"
@@ -175,7 +173,7 @@
         android:gravity="start"
         android:singleLine="false"
         android:text="majestic"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="22dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

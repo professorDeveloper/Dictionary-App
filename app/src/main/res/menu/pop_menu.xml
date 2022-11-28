@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/rating"
+        android:icon="@drawable/ic_baseline_star_border_24"
+        android:title="Rating Us" />
+    <item
+        android:id="@+id/share"
+        android:icon="@drawable/ic_baseline_share_24"
+        android:title="Ulashish" />
 
     <item
-        android:id="@+id/header1"
-        android:icon="@drawable/ic_baseline_dark_mode_24"
-        android:title="Tungi Rejim" />
-    <item
-        android:icon="@drawable/ic_baseline_dark_mode_24"
-        android:id="@+id/header2"
-        android:title="Ilova haqida" />
-    <item
-        android:icon="@drawable/ic_baseline_dark_mode_24"
-        android:id="@+id/header3"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:id="@+id/info"
+        android:title="Bog`lanish" />
+  <item
+        android:icon="@drawable/logout"
+        android:id="@+id/quit"
+      android:iconTint="@color/myColoor"
         android:title="Chiqish" />
+
+
 
 </menu>

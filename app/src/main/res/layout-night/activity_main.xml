@@ -6,20 +6,20 @@
     android:id="@+id/my_drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#2E2D2D"
     tools:context=".MainActivity"
-
     tools:ignore="HardcodedText">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-       >
+        >
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/app_bar"
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:background="#F7F7F7"
+            android:background="#5C5C5C"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -35,7 +35,7 @@
                     android:layout_marginVertical="5dp"
                     android:layout_marginEnd="15dp"
                     android:text="Dictionary"
-                    android:textColor="@color/myColoor"
+                    android:textColor="@color/white"
                     android:textSize="22sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -51,11 +51,11 @@
                     android:layout_marginStart="16dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:background="?selectableItemBackgroundBorderless"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
                     android:padding="8dp"
                     android:src="@drawable/menu"
                     android:textStyle="bold"
-                    android:tint="@color/myColoor"
+                    android:tint="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -74,7 +74,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginHorizontal="20dp"
-            android:src="@drawable/dictionary"
+            android:src="@drawable/dictionary_night_mode"
             app:layout_constraintBottom_toTopOf="@id/btn_eng_uzb"
             app:layout_constraintEnd_toEndOf="@+id/btn_eng_uzb"
             app:layout_constraintStart_toStartOf="@+id/btn_eng_uzb"
@@ -86,7 +86,7 @@
             android:layout_height="64dp"
             android:layout_marginHorizontal="33dp"
             android:layout_marginBottom="25dp"
-            android:background="@drawable/btn_select_lang"
+            android:background="@drawable/btn_select_lang_night"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
@@ -106,7 +106,7 @@
             android:layout_height="64dp"
             android:layout_marginHorizontal="33dp"
             android:layout_marginBottom="80dp"
-            android:background="@drawable/btn_select_lang"
+            android:background="@drawable/btn_select_lang_night"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
@@ -125,12 +125,10 @@
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
         android:id="@+id/navigation"
+        app:headerLayout="@layout/nav_header_main"
+
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/pop_menu"
-        >
-
-    </com.google.android.material.navigation.NavigationView>
+        app:menu="@menu/pop_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

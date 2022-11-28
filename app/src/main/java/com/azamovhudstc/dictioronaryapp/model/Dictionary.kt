@@ -1,14 +1,14 @@
 package com.azamovhudstc.dictioronaryapp.model
 
-class Dictionary  {
-    var id=0
-    var english=""
-    var type=""
-    var transcript=""
-    var uzbek=""
-    var countable=""
-    var isFavourite=0
-    var isFavouriteUzbekistan:Int?=null
+class Dictionary {
+    var id = 0
+    var english = ""
+    var type = ""
+    var transcript = ""
+    var uzbek = ""
+    var countable = ""
+    var isFavourite = 0
+    var isFavouriteUzbekistan: Int? = null
 
     constructor(
         id: Int,
@@ -31,7 +31,7 @@ class Dictionary  {
     }
 
     override fun toString(): String {
-        return "$english',\n\n $type',\n\n $transcript',\n\n '$uzbek',\n\n '$countable',\n\n $isFavourite, \n\n '$isFavouriteUzbekistan'"
+        return "Uzb text=${uzbek}\nEng text=${english}\nTranscript text${transcript}"
     }
 
 

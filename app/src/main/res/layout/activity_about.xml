@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:background="#F7F7F7"
+        android:elevation="5dp"
+        android:gravity="center"
+        app:title="Ilova haqida"
+        app:titleTextColor="@color/myColoor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_baseline_arrow_back_ios_24">
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:text="Bu ilova Gita Dasturchilar akademyasi o`quvchisi tomonidan yasalgan !"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/image"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="50dp"
+        android:elevation="10dp"
+        app:cardBackgroundColor="@color/myColoor"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView8"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView8">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+
+            android:src="@drawable/gita" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView4"
+        android:layout_width="355dp"
+
+        android:layout_height="105dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/image"
+        app:layout_constraintStart_toStartOf="@+id/image"
+        app:layout_constraintTop_toBottomOf="@+id/image"
+        app:layout_constraintVertical_bias="0.35">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/instagram"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="20dp"
+                android:background="?selectableItemBackgroundBorderless"
+                app:cardBackgroundColor="#D7EEFB"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/cardView3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.488">
+
+                <ImageView
+                    android:id="@+id/instagramIcon"
+                    android:layout_width="38dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:tooltipText="Instagram"
+                    android:clickable="true"
+
+                    android:src="@drawable/instagram"
+                    app:tint="#DC4444" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/facebook"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="20dp"
+                android:background="?selectableItemBackgroundBorderless"
+                app:cardBackgroundColor="#D7EEFB"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/instagram"
+                app:layout_constraintEnd_toStartOf="@+id/instagram"
+                app:layout_constraintTop_toTopOf="@+id/instagram"
+                app:layout_constraintVertical_bias="0.488">
+
+                <ImageView
+                    android:id="@+id/facebookIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:scaleType="centerCrop"
+                    android:tooltipText="Facebook"
+                    android:clickable="true"
+
+                    android:src="@drawable/facebook"
+                    app:tint="#2196F3" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/youtube"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="20dp"
+                android:background="?selectableItemBackgroundBorderless"
+                app:cardBackgroundColor="#D7EEFB"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="0dp"
+
+                app:layout_constraintBottom_toBottomOf="@+id/facebook"
+                app:layout_constraintEnd_toStartOf="@+id/facebook"
+                app:layout_constraintTop_toTopOf="@+id/facebook"
+                app:layout_constraintVertical_bias="0.488">
+
+                <ImageView
+                    android:id="@+id/youtubeIcon"
+                    android:layout_width="40dp"
+                    android:tooltipText="Youtube"
+                    android:layout_height="49dp"
+                    android:clickable="true"
+                    android:layout_gravity="center"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:src="@drawable/youtube"
+                    app:tint="#F32121" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="20dp"
+                android:background="?selectableItemBackgroundBorderless"
+                app:cardBackgroundColor="#D7EEFB"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.488">
+
+                <ImageView
+                    android:id="@+id/telegramIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:tooltipText="Telegram"
+
+                    android:clickable="true"
+
+                    android:src="@drawable/telegram"
+                    app:tint="#2196F3" />
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

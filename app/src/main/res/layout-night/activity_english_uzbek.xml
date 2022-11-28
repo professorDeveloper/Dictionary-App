@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#2E2D2D"
     tools:context=".EnglishUzbekActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#F7F7F7"
+        android:background="#5C5C5C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -27,7 +28,7 @@
                 android:foregroundGravity="center"
                 android:layout_height="45dp"
                 android:layout_marginStart="15dp"
-                android:src="@drawable/ic_baseline_arrow_back_ios_24"
+                android:src="@drawable/ic_baseline_arrow_back_ios_24_night"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
 
@@ -37,7 +38,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/english_uzbek"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/backs"
@@ -72,9 +73,9 @@
         android:id="@+id/search_card_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginHorizontal="10dp"
         android:layout_marginVertical="8dp"
-        android:background="#C9C8CD"
+        app:cardBackgroundColor="#5C5C5C"
         app:cardCornerRadius="10dp"
         app:cardElevation="3dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,6 +95,7 @@
                 android:layout_marginEnd="8dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:padding="8dp"
+                app:tint="@color/white"
                 android:src="@drawable/ic_clear"
                 android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -114,13 +116,17 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="ContentDescription" />
+                tools:ignore="ContentDescription"
+                app:tint="@color/white" />
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/search_edit_text"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:drawableTint="@color/white"
                 android:drawablePadding="10dp"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
                 android:drawableStart="@drawable/ic_search"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginVertical="12dp"
@@ -135,7 +141,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
-
 
 
     <androidx.recyclerview.widget.RecyclerView

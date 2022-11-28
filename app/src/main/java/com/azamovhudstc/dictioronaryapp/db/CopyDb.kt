@@ -62,6 +62,6 @@ open class CopyDb(
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        TODO("Salom Husanxon qale nima gaplar ")
+        TODO("Salom Husanxon qale nima gaplar tinc de")
     }
 }

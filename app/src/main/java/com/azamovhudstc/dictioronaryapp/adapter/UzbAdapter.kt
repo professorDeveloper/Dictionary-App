@@ -18,8 +18,8 @@ import kotlinx.android.synthetic.main.bottom_sheet.view.*
 import kotlinx.android.synthetic.main.item_rv.view.*
 import java.util.*
 
-class RvAdapter(var query :String,var arrayList: ArrayList<Dictionary>, var context: Activity) :
-    RecyclerView.Adapter<RvAdapter.Wh>() {
+class UzbAdapter(var query :String, var arrayList: ArrayList<Dictionary>, var context: Activity) :
+    RecyclerView.Adapter<UzbAdapter.Wh>() {
     private var changeRememberStatusListener: ((Int, Int) -> Unit)? = null
      lateinit var bottomSheetDialog:BottomSheetDialog;
     inner class Wh(var view: View) : RecyclerView.ViewHolder(view) {
@@ -28,18 +28,18 @@ class RvAdapter(var query :String,var arrayList: ArrayList<Dictionary>, var cont
             var database = DbHelper.getDatabase()
             itemView.setOnClickListener {
                 var view = LayoutInflater.from(context).inflate(R.layout.bottom_sheet, null, false)
-                if (this@RvAdapter::bottomSheetDialog.isInitialized){
+                if (this@UzbAdapter::bottomSheetDialog.isInitialized){
                     bottomSheetDialog.dismiss();
                 }
                 bottomSheetDialog = BottomSheetDialog(context)
                 bottomSheetDialog.setContentView(view)
-                view.uzb_word.text = dictionary.uzbek
-                view.eng_word.text = dictionary.english
+                view.uzb_word.text = dictionary.english
+                view.eng_word.text = dictionary.uzbek
                 view.iv_back.setOnClickListener {
                     bottomSheetDialog?.dismiss()
                 }
                 view.iv_volume.setOnClickListener {
-                    textToSpeech(dictionary.english)
+                    textToSpeech(dictionary.uzbek)
                 }
                 view.iv_share.setOnClickListener {
                     val sharingIntent = Intent(Intent.ACTION_SEND)
@@ -100,8 +100,8 @@ class RvAdapter(var query :String,var arrayList: ArrayList<Dictionary>, var cont
             }
 
             itemView.textView.text = dictionary.type
-            if (query == "") itemView.word.text = dictionary.english
-            else itemView.word.text = dictionary.english.spannable(query, itemView.context)
+            if (query == "") itemView.word.text = dictionary.uzbek
+            else itemView.word.text = dictionary.uzbek.spannable(query, itemView.context)
 
             itemView.bookmark.setOnClickListener {
                 if (dictionary.isFavourite == 0) {

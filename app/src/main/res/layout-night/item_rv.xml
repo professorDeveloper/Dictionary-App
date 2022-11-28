@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="12dp"
     android:layout_marginVertical="6dp"
-    app:cardBackgroundColor="@color/white"
+    app:cardBackgroundColor="#5C5C5C"
     android:layout_marginHorizontal="20dp"
     android:layout_height="wrap_content">
 
@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 android:text="Hello"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 

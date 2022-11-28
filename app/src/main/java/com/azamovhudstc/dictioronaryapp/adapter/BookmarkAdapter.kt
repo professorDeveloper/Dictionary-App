@@ -17,16 +17,21 @@ import kotlinx.android.synthetic.main.bottom_sheet.view.*
 import kotlinx.android.synthetic.main.item_rv.view.*
 
 
-class BookmarkAdapter(var arrayList: ArrayList<Dictionary>, var context:Activity):RecyclerView.Adapter<BookmarkAdapter.Wh>(){
+class BookmarkAdapter(var arrayList: ArrayList<Dictionary>, var context:Activity,var onClick:OnBookMarkStudent):RecyclerView.Adapter<BookmarkAdapter.Wh>(){
     private var changeRememberStatusListener: ((Int, Int) -> Unit)? = null
+    lateinit var bottomSheetDialog:BottomSheetDialog;
+
     inner class Wh(var view:View):RecyclerView.ViewHolder(view) {
        fun onBind(dictionary: Dictionary,position:Int){
            itemView.word.text=dictionary.english
            var database=DbHelper.getDatabase()
            itemView.textView.text=dictionary.type
-           var view = LayoutInflater.from(context).inflate(R.layout.bottom_sheet, null, false)
            itemView.setOnClickListener {
-               var bottomSheetDialog = BottomSheetDialog(context)
+               var view = LayoutInflater.from(context).inflate(R.layout.bottom_sheet, null, false)
+               if (this@BookmarkAdapter::bottomSheetDialog.isInitialized){
+                   bottomSheetDialog.dismiss();
+               }
+               bottomSheetDialog = BottomSheetDialog(context)
                bottomSheetDialog.setContentView(view)
                view.uzb_word.text = dictionary.uzbek
                view.eng_word.text = dictionary.english
@@ -65,12 +70,13 @@ class BookmarkAdapter(var arrayList: ArrayList<Dictionary>, var context:Activity
                    sharingIntent.putExtra(Intent.EXTRA_SUBJECT, shareSubject)
                    context.startActivity(Intent.createChooser(sharingIntent, "Share using"))
                }
+
                view.iv_bookmark.setOnClickListener {
                    if (dictionary.isFavourite == 0) {
                        view.iv_bookmark.setImageResource(R.drawable.ic_baseline_bookmark_24)
                        dictionary.isFavourite = 1
                        database.updateWord(dictionary)
-                       submitItems(database.getAllWords())
+                       submitItems(database.getAllBookmarksEng())
                        changeRememberStatusListener?.invoke(dictionary.id, 1)
 
                    } else {
@@ -79,7 +85,7 @@ class BookmarkAdapter(var arrayList: ArrayList<Dictionary>, var context:Activity
                        changeRememberStatusListener?.invoke(dictionary.id, 0)
 
                        database.updateWord(dictionary)
-                       submitItems(database.getAllWords())
+                       submitItems(database.getAllBookmarksEng())
                    }
                }
                if (dictionary.isFavourite == 1) {
@@ -94,19 +100,11 @@ class BookmarkAdapter(var arrayList: ArrayList<Dictionary>, var context:Activity
            }
 
            itemView.bookmark.setOnClickListener {
-               if (dictionary.isFavourite == 0) {
-                   itemView.bookmark.setImageResource(R.drawable.ic_baseline_bookmark_24)
-                   dictionary.isFavourite=1
-                   database.updateWord(dictionary)
-                   submitItems(database.getAllBookmarksEng())
-               }
-               else {
-                   itemView.bookmark.setImageResource(R.drawable.ic_baseline_bookmark_border_24)
-                   dictionary.isFavourite=0
-                   database.updateWord(dictionary)
-                   submitItems(database.getAllBookmarksEng())
-               }
+               onClick.onClick(dictionary,itemView)
+
            }
+
+
            if (dictionary.isFavourite == 1) {
                itemView.bookmark.setImageResource(R.drawable.ic_baseline_bookmark_24)
            }
@@ -136,5 +134,8 @@ class BookmarkAdapter(var arrayList: ArrayList<Dictionary>, var context:Activity
     fun textToSpeech(text:String){
         var tts= TTS(context,text,false)
 
+    }
+    interface OnBookMarkStudent{
+        fun onClick(course: Dictionary,itemView: View)
     }
 }

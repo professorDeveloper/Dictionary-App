@@ -1,5 +1,18 @@
 <resources>
-    <string name="app_name">DictioronaryApp</string>
+    <string name="app_name">Dictioronary App</string>
     <string name="uzbek_english">UZBEK-ENGLISH</string>
     <string name="english_uzbek">ENGLISH-UZBEK</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Dictionary App</string>
+    <string name="nav_header_subtitle">Tools with Dictionary</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
 </resources>

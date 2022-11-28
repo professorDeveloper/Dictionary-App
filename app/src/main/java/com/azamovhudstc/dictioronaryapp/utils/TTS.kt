@@ -7,7 +7,7 @@ import java.util.*
 
 class TTS(private val activity: Activity,
           private val message: String,
-          private val br: Boolean) : TextToSpeech.OnInitListener {
+          private var br: Boolean) : TextToSpeech.OnInitListener {
 
     private val tts: TextToSpeech = TextToSpeech(activity, this)
 
@@ -17,6 +17,9 @@ class TTS(private val activity: Activity,
             val localeBR = Locale("en", "US")
             val localeUS = Locale.US
 
+
+
+            br=true
             val result: Int =  tts.setLanguage(localeBR)
             tts.setLanguage(localeUS)
 
@@ -27,8 +30,7 @@ class TTS(private val activity: Activity,
             }
 
         } else {
-            Toast.makeText(activity, "Initilization Failed!", Toast.LENGTH_SHORT).show()
-        }
+            br=false }
     }
 
     private fun speakOut(message: String) {

@@ -3,14 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#2E2D2D"
+
     android:layout_height="match_parent"
     tools:context=".EnglishUzbekActivity">
-
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#F7F7F7"
+        android:background="#5C5C5C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -18,36 +19,34 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
             <ImageView
-                android:id="@+id/backs"
+                android:id="@+id/backuzb"
                 android:layout_width="45dp"
-                android:background="?selectableItemBackgroundBorderless"
                 android:scaleType="center"
+                android:background="?selectableItemBackgroundBorderless"
                 android:foregroundGravity="center"
                 android:layout_height="45dp"
                 android:layout_marginStart="15dp"
                 android:src="@drawable/ic_baseline_arrow_back_ios_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/english_uzbek"
-                android:textColor="@color/black"
+                android:text="@string/uzbek_english"
+                android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/backs"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/backs"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="SpUsage" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/iv_bookmarks"
+                android:id="@+id/iv_bookmarks_uzb"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="@dimen/margin_standard"
@@ -71,12 +70,12 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/search_card_view"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="10dp"
         android:layout_marginVertical="8dp"
-        android:background="#C9C8CD"
+        app:cardBackgroundColor="#5C5C5C"
         app:cardCornerRadius="10dp"
-        app:cardElevation="3dp"
+        app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/app_bar">
@@ -88,7 +87,7 @@
 
 
             <ImageView
-                android:id="@+id/clear_search_query"
+                android:id="@+id/clear_search_query_uzb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
@@ -99,36 +98,39 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="ContentDescription" />
+                tools:ignore="ContentDescription"
+                app:tint="@color/white" />
 
             <ImageView
-                android:id="@+id/voice"
+                android:id="@+id/voice_uzb"
                 android:layout_width="wrap_content"
-
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="8dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:padding="8dp"
                 android:src="@drawable/ic_baseline_keyboard_voice_24"
-                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="ContentDescription" />
+                tools:ignore="ContentDescription"
+                app:tint="@color/white" />
 
             <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/search_edit_text"
+                android:id="@+id/search_edit_text_uzb"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:drawablePadding="10dp"
                 android:drawableStart="@drawable/ic_search"
+                android:drawableTint="@color/white"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginVertical="12dp"
                 android:background="@android:color/transparent"
                 android:hint="Search"
                 android:inputType="text"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/clear_search_query"
+                app:layout_constraintEnd_toStartOf="@id/clear_search_query_uzb"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -138,8 +140,10 @@
 
 
 
+
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_eng"
+        android:id="@+id/rv_uzb"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginVertical="10dp"

@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#2E2D2D"
     android:layout_height="match_parent"
     tools:context=".BookMarkActivity">
 
@@ -24,9 +25,8 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
-        android:elevation="20dp"
         android:background="?selectableItemBackgroundBorderless"
-
+        android:elevation="20dp"
         android:src="@drawable/ic_baseline_arrow_back_ios_24"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
 
         android:layout_height="60dp"
-        android:background="@color/myColoor"
+        android:background="#5C5C5C"
         android:elevation="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,7 +80,7 @@
         android:layout_height="wrap_content"
         android:text="Bookmarklar yo`q"
         android:layout_marginTop="20dp"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
