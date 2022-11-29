@@ -1,4 +1,4 @@
-package com.azamovhudstc.dictioronaryapp.db.app
+package com.azamovhudstc.dictioronaryapp.app
 
 import android.app.Application
 import com.azamovhudstc.dictioronaryapp.db.DbHelper

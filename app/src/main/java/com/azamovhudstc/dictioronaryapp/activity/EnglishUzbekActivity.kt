@@ -1,4 +1,4 @@
-package com.azamovhudstc.dictioronaryapp
+package com.azamovhudstc.dictioronaryapp.activity
 
 import android.Manifest
 import android.content.Intent
@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.RecyclerView
+import com.azamovhudstc.dictioronaryapp.R
 import com.azamovhudstc.dictioronaryapp.adapter.RvAdapter
 import com.azamovhudstc.dictioronaryapp.db.DbHelper
 import com.google.android.material.bottomsheet.BottomSheetDialog

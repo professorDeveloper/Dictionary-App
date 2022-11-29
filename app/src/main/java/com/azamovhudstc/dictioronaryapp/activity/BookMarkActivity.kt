@@ -1,9 +1,10 @@
-package com.azamovhudstc.dictioronaryapp
+package com.azamovhudstc.dictioronaryapp.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import com.azamovhudstc.dictioronaryapp.R
 import com.azamovhudstc.dictioronaryapp.adapter.BookmarkAdapter
 import com.azamovhudstc.dictioronaryapp.adapter.RvAdapter
 import com.azamovhudstc.dictioronaryapp.db.DbHelper

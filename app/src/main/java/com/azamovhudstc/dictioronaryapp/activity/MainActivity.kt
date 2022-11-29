@@ -1,4 +1,4 @@
-package com.azamovhudstc.dictioronaryapp
+package com.azamovhudstc.dictioronaryapp.activity
 
 import android.app.Application
 import android.content.DialogInterface
@@ -23,6 +23,8 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.VIEW_MODEL_STORE_OWNER_KEY
+import com.azamovhudstc.dictioronaryapp.BuildConfig
+import com.azamovhudstc.dictioronaryapp.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.nav_header_main.view.*
 

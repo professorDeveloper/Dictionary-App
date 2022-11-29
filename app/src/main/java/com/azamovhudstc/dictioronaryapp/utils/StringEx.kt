@@ -6,7 +6,6 @@ import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import androidx.core.content.ContextCompat
 import com.azamovhudstc.dictioronaryapp.R
-import com.azamovhudstc.dictioronaryapp.db.app.App
 
 fun String.spannable(query: String,context: Context): SpannableString {
     val span = SpannableString(this)
