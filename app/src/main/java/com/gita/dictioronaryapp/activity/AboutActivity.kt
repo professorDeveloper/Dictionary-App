@@ -1,12 +1,10 @@
-package com.azamovhudstc.dictioronaryapp.activity
+package com.gita.dictioronaryapp.activity
 
 import android.content.Intent
-import android.media.browse.MediaBrowser
 import android.net.Uri
 import android.os.Bundle
-import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import com.azamovhudstc.dictioronaryapp.R
+import com.gita.dictioronaryapp.R
 import kotlinx.android.synthetic.main.activity_about.*
 
 

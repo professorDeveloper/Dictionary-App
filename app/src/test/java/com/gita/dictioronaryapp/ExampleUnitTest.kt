@@ -1,4 +1,4 @@
-package com.azamovhudstc.dictioronaryapp
+package com.gita.dictioronaryapp
 
 import org.junit.Test
 

@@ -1,21 +1,19 @@
-package com.azamovhudstc.dictioronaryapp.activity
+package com.gita.dictioronaryapp.activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.speech.RecognizerIntent
-import android.util.Log
 import android.view.View
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.doOnTextChanged
+import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.RecyclerView
-import com.azamovhudstc.dictioronaryapp.R
-import com.azamovhudstc.dictioronaryapp.adapter.RvAdapter
-import com.azamovhudstc.dictioronaryapp.adapter.UzbAdapter
-import com.azamovhudstc.dictioronaryapp.db.DbHelper
+import com.gita.dictioronaryapp.R
+import com.gita.dictioronaryapp.adapter.UzbAdapter
+import com.gita.dictioronaryapp.db.DbHelper
 import kotlinx.android.synthetic.main.activity_english_uzbek.*
-import kotlinx.android.synthetic.main.activity_english_uzbek.clear_search_query
 import kotlinx.android.synthetic.main.activity_uzbek_english.*
 import java.util.*
 
@@ -26,7 +24,8 @@ class UzbekEnglishActivity : AppCompatActivity() {
     lateinit var database: DbHelper
     lateinit var adapter: UzbAdapter
     var offset: Int=0;
-
+    lateinit var searchView: EditText
+    private var _query = ""
     // on below line we are creating a constant value
     private val REQUEST_CODE_SPEECH_INPUT = 1
 
@@ -43,29 +42,38 @@ class UzbekEnglishActivity : AppCompatActivity() {
         }
         database = DbHelper.getDatabase()
 
-        adapter = UzbAdapter(query,database.getAllWords(offset),this)
+        adapter = UzbAdapter(query, database.getAllWords(offset), this)
         rv_uzb.adapter = adapter
         rv_uzb.setOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
-                offset=dx
+                offset = dx
             }
         })
 
         handle = Handler(Looper.getMainLooper())
 
-        search_edit_text_uzb.doOnTextChanged { text, _, _, _ ->
-            val query = text.toString().lowercase()
-            adapter.query = text.toString()
-            handle.postDelayed({
-                query?.let {
-                    this@UzbekEnglishActivity.query = it.trim()
-                    adapter.query = this@UzbekEnglishActivity.query
-                    adapter.submitItems(database.getWordByQueryUZb(it.trim()))
+        handle = Handler(Looper.getMainLooper())
+        adapter.setChangeRememberStatusListener { id, newAmount ->
+            database.updateWord(newAmount, id)
+            adapter.arrayList = database.getWordByQuery(_query)
+            adapter.notifyDataSetChanged()
+        }
 
+        handle = Handler(Looper.getMainLooper())
+        searchView = findViewById<EditText>(R.id.search_edit_text_uzb)
+        searchView.addTextChangedListener {
+            handle.removeCallbacksAndMessages(null)
+            handle.postDelayed({
+                it?.let {
+                    adapter.arrayList = database.getWordByQueryUZb(it.toString().trim())
+                    adapter.query = it.toString().trim()
+                    _query = it.toString().trim()
+                    adapter.notifyDataSetChanged()
                 }
             }, 1000)
-            toggleImageView(query)
+
+            toggleImageView(it.toString())
         }
         clear_search_query_uzb.setOnClickListener {
             search_edit_text_uzb.setText("")
@@ -104,15 +112,7 @@ class UzbekEnglishActivity : AppCompatActivity() {
 
             }
         }
-        adapter.setChangeRememberStatusListener { id, newAmount ->
-            database.updateWord(newAmount, id)
-            Log.d("!@#", "onCreate: ${query.toString()}")
-            adapter.submitItems(database.getWordByQueryUZb(query))
-
-        }
-
     }
-
     private fun toggleImageView(query: String) {
         if (query.trim().isNotEmpty()) {
             voice_uzb.visibility =View.INVISIBLE

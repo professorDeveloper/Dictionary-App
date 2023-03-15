@@ -119,8 +119,11 @@
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/search_edit_text"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="25dp"
                 android:drawablePadding="10dp"
+                app:searchIcon="@drawable/ic_search"
+                android:backgroundTint="@color/myColoor"
+
                 android:drawableStart="@drawable/ic_search"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginVertical="12dp"

@@ -1,4 +1,4 @@
-package com.azamovhudstc.dictioronaryapp.utils
+package com.gita.dictioronaryapp.utils
 
 import android.app.Activity
 import android.speech.tts.TextToSpeech

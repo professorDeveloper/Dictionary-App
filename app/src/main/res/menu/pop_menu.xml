@@ -10,9 +10,9 @@
         android:title="Ulashish" />
 
     <item
-        android:icon="@drawable/ic_baseline_person_24"
+        android:icon="@drawable/ic_baseline_info_24"
         android:id="@+id/info"
-        android:title="Bog`lanish" />
+        android:title="Haqida" />
   <item
         android:icon="@drawable/logout"
         android:id="@+id/quit"

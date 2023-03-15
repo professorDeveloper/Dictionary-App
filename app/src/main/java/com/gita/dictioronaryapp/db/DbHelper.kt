@@ -1,10 +1,9 @@
-package com.azamovhudstc.dictioronaryapp.db
+package com.gita.dictioronaryapp.db
 
 import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
-import android.database.Cursor
-import com.azamovhudstc.dictioronaryapp.model.Dictionary
+import com.gita.dictioronaryapp.model.Dictionary
 
 class DbHelper private constructor(context: Context) :
     CopyDb(context, "dictionary.db") {

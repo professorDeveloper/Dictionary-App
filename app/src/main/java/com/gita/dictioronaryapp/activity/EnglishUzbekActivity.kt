@@ -1,4 +1,4 @@
-package com.azamovhudstc.dictioronaryapp.activity
+package com.gita.dictioronaryapp.activity
 
 import android.Manifest
 import android.content.Intent
@@ -6,16 +6,15 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.speech.RecognizerIntent
-import android.util.Log
 import android.view.View
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.doOnTextChanged
+import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.RecyclerView
-import com.azamovhudstc.dictioronaryapp.R
-import com.azamovhudstc.dictioronaryapp.adapter.RvAdapter
-import com.azamovhudstc.dictioronaryapp.db.DbHelper
-import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.gita.dictioronaryapp.R
+import com.gita.dictioronaryapp.adapter.RvAdapter
+import com.gita.dictioronaryapp.db.DbHelper
 import com.permissionx.guolindev.PermissionX
 import kotlinx.android.synthetic.main.activity_english_uzbek.*
 import kotlinx.android.synthetic.main.activity_uzbek_english.*
@@ -24,7 +23,8 @@ import java.util.*
 
 class EnglishUzbekActivity : AppCompatActivity() {
     lateinit var handle: Handler
-    var query = ""
+    lateinit var searchView: EditText
+    private var _query = ""
     lateinit var database: DbHelper
     lateinit var adapter: RvAdapter
     var offset: Int = 0;
@@ -44,7 +44,7 @@ class EnglishUzbekActivity : AppCompatActivity() {
         }
         database = DbHelper.getDatabase()
 
-        adapter = RvAdapter(query, database.getAllWords(offset), this)
+        adapter = RvAdapter(_query, database.getAllWords(offset), this)
         rv_eng.adapter = adapter
         rv_eng.setOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
@@ -101,33 +101,30 @@ class EnglishUzbekActivity : AppCompatActivity() {
 
         }
         handle = Handler(Looper.getMainLooper())
-
-        search_edit_text.doOnTextChanged { text, _, _, _ ->
-            val query = text.toString().lowercase()
-            adapter.query = text.toString()
-            handle.postDelayed({
-                query?.let {
-                    this@EnglishUzbekActivity.query = it.trim()
-                    adapter.query = this@EnglishUzbekActivity.query
-                    adapter.submitItems(database.getWordByQuery(it.trim()))
-
-                }
-            }, 1000)
-            toggleImageView(query)
-
-
-        }
-        clear_search_query.setOnClickListener {
-            search_edit_text.setText("")
-
-        }
-
         adapter.setChangeRememberStatusListener { id, newAmount ->
             database.updateWord(newAmount, id)
-            Log.d("!@#", "onCreate: ${query.toString()}")
-            adapter.submitItems(database.getWordByQuery(query))
-
+            adapter.arrayList = database.getWordByQuery(_query)
+            adapter.notifyDataSetChanged()
         }
+
+        handle = Handler(Looper.getMainLooper())
+        searchView = findViewById<EditText>(R.id.search_edit_text)
+        searchView.addTextChangedListener {
+            handle.removeCallbacksAndMessages(null)
+            handle.postDelayed({
+                it?.let {
+                    adapter.arrayList = database.getWordByQuery(it.toString().trim())
+                    adapter.query = it.toString().trim()
+                    _query = it.toString().trim()
+                    adapter.notifyDataSetChanged()
+                }
+            }, 1000)
+            toggleImageView(it.toString())
+        }
+        clear_search_query.setOnClickListener {
+            searchView.setText("")
+        }
+
 
     }
 
@@ -143,28 +140,18 @@ class EnglishUzbekActivity : AppCompatActivity() {
     }
 
     override fun onResume() {
-        adapter.submitItems(database.getWordByQuery(query))
+        adapter.submitItems(database.getWordByQuery(_query))
         super.onResume()
 
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-
-        // in this method we are checking request
-        // code with our result code.
         if (requestCode == REQUEST_CODE_SPEECH_INPUT) {
-            // on below line we are checking if result code is ok
             if (resultCode == RESULT_OK && data != null) {
-
-                // in that case we are extracting the
-                // data from our array list
                 val res: ArrayList<String> =
                     data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS) as ArrayList<String>
-
-                // on below line we are setting data
-                // to our output text view.
-                search_edit_text.setText(
+                searchView.setText(
                     Objects.requireNonNull(res)[0]
                 )
             }

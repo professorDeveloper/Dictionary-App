@@ -1,4 +1,4 @@
-package com.azamovhudstc.dictioronaryapp.adapter
+package com.gita.dictioronaryapp.adapter
 
 import android.app.Activity
 import android.content.Intent
@@ -6,12 +6,11 @@ import android.speech.tts.TextToSpeech
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.azamovhudstc.dictioronaryapp.R
-import com.azamovhudstc.dictioronaryapp.db.DbHelper
-import com.azamovhudstc.dictioronaryapp.model.Dictionary
-import com.azamovhudstc.dictioronaryapp.utils.TTS
+import com.gita.dictioronaryapp.R
+import com.gita.dictioronaryapp.db.DbHelper
+import com.gita.dictioronaryapp.model.Dictionary
+import com.gita.dictioronaryapp.utils.TTS
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.android.synthetic.main.bottom_sheet.view.*
 import kotlinx.android.synthetic.main.item_rv.view.*
@@ -31,7 +30,7 @@ class BookmarkAdapter(var arrayList: ArrayList<Dictionary>, var context:Activity
                if (this@BookmarkAdapter::bottomSheetDialog.isInitialized){
                    bottomSheetDialog.dismiss();
                }
-               bottomSheetDialog = BottomSheetDialog(context)
+               bottomSheetDialog = BottomSheetDialog(context, R.style.MyBottomSheetDialogTheme)
                bottomSheetDialog.setContentView(view)
                view.uzb_word.text = dictionary.uzbek
                view.eng_word.text = dictionary.english

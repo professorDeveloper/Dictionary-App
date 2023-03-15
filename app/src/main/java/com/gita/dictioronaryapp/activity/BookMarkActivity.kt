@@ -1,14 +1,13 @@
-package com.azamovhudstc.dictioronaryapp.activity
+package com.gita.dictioronaryapp.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import com.azamovhudstc.dictioronaryapp.R
-import com.azamovhudstc.dictioronaryapp.adapter.BookmarkAdapter
-import com.azamovhudstc.dictioronaryapp.adapter.RvAdapter
-import com.azamovhudstc.dictioronaryapp.db.DbHelper
-import com.azamovhudstc.dictioronaryapp.model.Dictionary
+import com.gita.dictioronaryapp.R
+import com.gita.dictioronaryapp.adapter.BookmarkAdapter
+import com.gita.dictioronaryapp.db.DbHelper
+import com.gita.dictioronaryapp.model.Dictionary
 import kotlinx.android.synthetic.main.activity_book_mark.*
 import kotlinx.android.synthetic.main.bottom_sheet.view.*
 import kotlinx.android.synthetic.main.item_rv.view.*

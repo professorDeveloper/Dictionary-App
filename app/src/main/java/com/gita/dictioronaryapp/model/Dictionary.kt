@@ -1,4 +1,4 @@
-package com.azamovhudstc.dictioronaryapp.model
+package com.gita.dictioronaryapp.model
 
 class Dictionary {
     var id = 0

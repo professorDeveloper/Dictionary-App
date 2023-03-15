@@ -13,10 +13,22 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="MyBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/MYBottomSheetStyle</item>
+    </style>
 
+    <style name="MYBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
     <style name="Theme.DictioronaryApp.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.MyTask.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimationDuration">1200</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/dictionary</item>
+        <item name="postSplashScreenTheme">@style/Theme.AppCompat</item>
     </style>
 
     <style name="Theme.DictioronaryApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

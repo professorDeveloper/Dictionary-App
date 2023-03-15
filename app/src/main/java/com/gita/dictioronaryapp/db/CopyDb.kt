@@ -1,4 +1,4 @@
-package com.azamovhudstc.dictioronaryapp.db
+package com.gita.dictioronaryapp.db
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
